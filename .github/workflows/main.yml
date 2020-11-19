@@ -52,9 +52,9 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.HOST }}
-            username: ${{ secrets.ROOT_NAME }}
-            key: ${{ secrets.SSH_KEY }}
-            passphrase: ${{ secrets.PASSPHRASE }}
+          username: ${{ secrets.ROOT_NAME }}
+          key: ${{ secrets.SSH_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
           script: |
             sudo docker pull jetdj/yamdb:latest
             sudo docker-compose up --force-recreate -d web
