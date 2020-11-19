@@ -11,7 +11,7 @@ services:
     env_file:
       - ./.env
   web:
-    image: jetdj/yamdb:v1.2
+    image: jetdj/yamdb:latest
     restart: always
     expose:
       - 8000
