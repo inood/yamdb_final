@@ -1,6 +1,5 @@
 [![yamdb Actions status](https://github.com/inood/yamdb_final/workflows/yamdb/badge.svg)](https://github.com/inood/yamdb_final/actions)
 
-
 # API YAMDB
 
 Api для сервиса YAMDB каталога произведений и отзывов на них.
