@@ -1,6 +1,9 @@
 name: Yamdb-final workflow
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   tests:
@@ -44,6 +47,7 @@ jobs:
         with:
           push: true
           tags: jetdj/yamdb:latest
+
   deploy:
     runs-on: ubuntu-latest
     needs: build_and_push_to_docker_hub
@@ -55,9 +59,10 @@ jobs:
           username: ${{ secrets.ROOT_NAME }}
           password: ${{ secrets.ROOT_PASS }}
           script: |
+            sudo docker rmi jetdj/yamdb
             sudo docker pull jetdj/yamdb:latest
-            sudo docker stop $(sudo docker ps -a -q)
             sudo docker-compose up --force-recreate -d web
+
   send_message:
     runs-on: ubuntu-latest
     needs: deploy

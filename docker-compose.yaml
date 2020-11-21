@@ -2,6 +2,7 @@ version: '3'
 volumes:
   postgres_data:
   static_volume:
+  media:
 
 services:
   db:
@@ -10,21 +11,23 @@ services:
       - postgres_data:/var/lib/postgresql/data/
     env_file:
       - ./.env
+
   web:
     image: jetdj/yamdb:latest
     restart: always
-    expose:
-      - 8000
     volumes:
       - static_volume:/static/
     depends_on:
       - db
     env_file:
       - ./.env
+
   nginx:
-    build: ./nginx
+    image: nginx:latest
     volumes:
       - static_volume:/code/static
+      - media:/media
+      - ./nginx/conf.d:/etc/nginx/default.conf
     ports:
       - 80:80
     depends_on:
