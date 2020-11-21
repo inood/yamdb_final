@@ -27,7 +27,7 @@ services:
     volumes:
       - static_volume:/code/static
       - media:/media
-      - ./nginx/conf.d:/etc/nginx/default.conf
+      - ./nginx/ngnix.conf:/etc/nginx/default.conf
     ports:
       - 80:80
     depends_on:
