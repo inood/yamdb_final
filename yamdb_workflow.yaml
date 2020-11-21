@@ -8,7 +8,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Set up Python 
+    - name: Set up Python
       uses: actions/setup-python@v2
       with:
         python-version: 3.8
@@ -56,7 +56,7 @@ jobs:
           username: ${{ secrets.ROOT_NAME }}
           password: ${{ secrets.ROOT_PASS }}
           script: |
-            sudo docker rmi jetdj/yamdb
+            sudo docker rmi jetdj/yamdb -f
             sudo docker pull jetdj/yamdb:latest
             sudo docker-compose up --force-recreate -d web
 
