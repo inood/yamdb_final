@@ -1,4 +1,4 @@
-![Yamdb](https://github.com/inood/yamdb_final/workflows/Yamdb-final%20workflow/badge.svg)
+![Yamdb](https://github.com/inood/yamdb_final/workflows/Yamdb-final-workflow/badge.svg)
 
 # API YAMDB
 
