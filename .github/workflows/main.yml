@@ -59,6 +59,7 @@ jobs:
           username: ${{ secrets.ROOT_NAME }}
           password: ${{ secrets.ROOT_PASS }}
           script: |
+            cd yamdb_final
             sudo docker rmi jetdj/yamdb -f
             sudo docker pull jetdj/yamdb:latest
             sudo docker-compose up --force-recreate -d web
