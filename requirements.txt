@@ -19,6 +19,6 @@ pytest-django==4.1.0
 pytils==0.3
 pytz==2020.4
 six==1.15.0
-sqlparse==0.4.1
+sqlparse==0.4.2
 toml==0.10.2
 zipp==3.4.0
